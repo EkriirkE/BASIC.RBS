@@ -35,14 +35,14 @@
 274 TH = TH + SZ(1)
 280 RZ(0) = 30
 281 RZ(1) = 24
-290 SX = (RZ(0) - RZ(0) * .05) / GW
-291 SY = (RZ(1) - RZ(1) * .07) / TH
+290 SX = (RZ(0) - RZ(0) * 0.05) / GW
+291 SY = (RZ(1) - RZ(1) * 0.07) / TH
 300 SK = SX
 301 IF SY > SK THEN 310
 302 SK = SY
 
 310 CALL CLEAR
-320 PRINT "EKRIIRKE 2021-07-31"
+320 PRINT "EKRIIRKE 2021-07-31": : : : : : : : : : : : : : : : : : : : : : :
 330 X = -GW / 2
 331 Y = -GG(2) / 2
 332 GOSUB 2030
@@ -356,7 +356,7 @@
 4262 IF ZC = 0 THEN 4350
 4270 X1 = PT(ZI)
 4271 ZI = ZI + 1
-4280 Y1 = PT(ZI) * (SH - 1) / SH
+4280 Y1 = PT(ZI) * (SH - 1) / SH - SN * (SH / SY)
 4281 ZI = ZI + 1
 4290 FOR ZJ = 1 TO ZC - 1
 4300 X2 = PT(ZI)
