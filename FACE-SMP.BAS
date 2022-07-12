@@ -2,7 +2,7 @@
 110 REM Erik Johnson - EkriirkE
 120 REM 2022-07-11
 
-200 WIDTH 40: COLOR 0, 7: CLS
+200 WIDTH 40: CLS
 210 LOCATE 3, 5: PRINT "Use arrows to move the cursor."
 220 LOCATE 4, 5: PRINT "WASD to move/swap the block."
 230 LOCATE 5, 5: PRINT "f/F to flip block face."
@@ -13,15 +13,15 @@
 280 READ F(X, Y)
 290 NEXT X, Y
 
-300 COLOR 15, 7: GOSUB 600
+300 COLOR 15, 0: GOSUB 600
 310 COLOR 0, 7
 320 FOR Y = 0 TO 4: FOR X = 0 TO 4
 330 LOCATE FY + Y, FX + X: PRINT MID$(C$, F(X, Y) + 1, 1);
 340 NEXT X, Y
 350 K$ = RIGHT$(INKEY$, 1)
 360 IF K$ = "" GOTO 350
-370 IF K$ = CHR$(27) OR K$ = "q" THEN END
-380 COLOR 7, 7: GOSUB 600
+370 IF K$ = CHR$(27) OR K$ = "q" THEN SYSTEM
+380 COLOR 0, 0: GOSUB 600
 390 IF INSTR("wasd", K$) THEN MX = CX: MY = CY ELSE MX = -1
 400 IF K$ = "a" OR K$ = "K" THEN CX = CX - 1: IF CX < 0 THEN CX = 0
 410 IF K$ = "s" OR K$ = "P" THEN CY = CY + 1: IF CY > 4 THEN CY = 4
